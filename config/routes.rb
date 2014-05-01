@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   get 'sessions/destroy' => 'sessions#destroy'
 
   resources :users
-  resources :patients
-  resources :wounds
-  resources :statuses
+  resources :patients do 
+    resources :wounds
+  end
+  
+  resources :wounds do 
+    resources :statuses
+  end
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
