@@ -9,6 +9,7 @@ class WoundsController < ApplicationController
 	end
 
 	def new
+		@patient = Patient.find(params[:format])
 		@wound = Wound.new
 	end
 
